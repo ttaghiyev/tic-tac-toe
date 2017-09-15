@@ -1,0 +1,70 @@
+// Core styles / layout
+// --------------------
+
+body,
+html {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-family: 'Dosis';
+  font-weight: 400;
+}
+
+li {
+  list-style: none;
+}
+
+input {
+  outline: none;
+  border: 0;
+  background-color: transparent;
+  font-family: inherit;
+  appearance: none;
+}
+
+.app-core {
+  height: 100%;
+}
+
+.zone-content {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+// contains player names / score
+.zone-header {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex-flow: row nowrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.zone-grid {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  box-sizing: border-box;
+}
+
+// @TODO abstract out the 'full width + center'
+.zone-footer {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  flex-flow: row nowrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.panel {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

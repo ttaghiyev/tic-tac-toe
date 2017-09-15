@@ -1,0 +1,35 @@
+// SPACING
+// ----------------
+$pad: 8px;
+$pad-half: $pad / 2;
+$pad-and-half: $pad * 1.5;
+$pad-double: $pad * 2;
+$space: 24px;
+$space-half: $space / 2;
+$space-and-half: $space * 1.5;
+$space-double: $space * 2;
+
+// COLORS
+// ----------------
+$primary-clr: #ff7598;
+$secondary-clr: #57b9f2;
+$turquoise: #47E5BC;
+$green: #9EE493; // granny smioth apple
+// $player-one-color: #6610f2;
+// $player-two-color: #f17105;
+$white: #fff;
+$black: #000; // $grey50: #fff;
+$grey300: #cbcbcb;
+$grey400: #afafaf;
+$grey500: #909090;
+$grey700: #717171;
+$grey800: #525252;
+$grey900: #363636;
+
+// EXTENDS
+// ----------------
+
+%float {
+  display: flex;
+  flex-direction: row;
+}

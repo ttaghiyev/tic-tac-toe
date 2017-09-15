@@ -1,0 +1,86 @@
+button {
+  outline: none;
+  border: 0;
+  background-color: transparent;
+  appearance: none;
+}
+
+.controls {
+  display: flex;
+  position: relative;
+  flex-flow: row nowrap;
+  background-color: pink;
+}
+
+.game-info {
+  $bg-color: $grey700;
+
+  position: relative;
+  background-color: $bg-color;
+  width: 140px;
+  height: 48px;
+
+  .info-bg {
+    position: absolute;
+    bottom: 0;
+
+    fill: $bg-color;
+
+    &.info-bg-lt {
+      right: 100%;
+    }
+
+    &.info-bg-rt {
+      left: 100%;
+    }
+  }
+}
+
+.game-info-counter {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: $space * .75;
+
+  .round-digits,
+  .turn-digits {
+    display: inline-block;
+  }
+
+  &.game-info-round {
+    padding-top: 6px;
+    font-size: 13px;
+  }
+
+  &.game-info-turn {
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
+.control-sect {
+
+  position: absolute;
+  bottom: 0;
+  // left: 0;
+  // transform: translateX(-50%);
+
+  &.control-sect-lt {
+    right: 100%;
+    padding-right: $pad-and-half;
+  }
+
+  &.control-sect-rt {
+    left: 100%;
+    padding-left: $pad-and-half;
+  }
+
+  button {
+    padding: 9px $pad;
+    text-transform: uppercase;
+    line-height: $space;
+    font-size: 13px;
+    font-weight: 500;
+  }
+}

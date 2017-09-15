@@ -1,0 +1,20 @@
+.grid {
+  display: flex;
+  flex-flow: row wrap;
+  width: 300px;
+}
+
+.cell {
+  display: inline-block;
+  margin-bottom: 5px;
+  border: 1px solid blue;
+  border-radius: 2px;
+  width: 33.33333%;
+  box-sizing: border-box;
+  background: $white;
+  // min-width: 60px;
+  //
+  &.cell-marked {
+    // border-color: green;
+  }
+}
