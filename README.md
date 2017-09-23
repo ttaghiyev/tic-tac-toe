@@ -1,3 +1,16 @@
+## Install / Launch
+
+Dont have yarn?
+
+`npm install -g yarn`
+
+Have yarn?
+
+`yarn install`
+`yarn start`
+
+Game is at <http://localhost:8080>
+
 ### References
 
 - [expect.js](https://github.com/Automattic/expect.js)
