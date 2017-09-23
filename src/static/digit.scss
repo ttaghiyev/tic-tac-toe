@@ -1,0 +1,12 @@
+.digits {
+  display: inline-block;
+}
+
+.digit {
+  color: inherit;
+  font-family: 'Nova Mono';
+
+  .digit-mute {
+    opacity: .45;
+  }
+}

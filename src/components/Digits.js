@@ -18,11 +18,13 @@ export const Digits = ({ className = '', val }) => {
     ) : (
       <span className="digit">
         <i className="digit-mute">0</i>
-        {trueNum}
+        {trueNum === 0 ? <i className="digit-mute">0</i> : trueNum}
       </span>
     );
 
-  return <div className={cn('digit-counter', className)}>{content}</div>;
+  return (
+    <div className={cn('digits', 'digit-counter', className)}>{content}</div>
+  );
 };
 
 Digits.propTypes = {

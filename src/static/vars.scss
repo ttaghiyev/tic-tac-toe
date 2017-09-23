@@ -13,12 +13,15 @@ $space-double: $space * 2;
 // ----------------
 $primary-clr: #ff7598;
 $secondary-clr: #57b9f2;
-$turquoise: #47E5BC;
-$green: #9EE493; // granny smioth apple
-// $player-one-color: #6610f2;
-// $player-two-color: #f17105;
+$turquoise: #47e5bc;
+$green: #9ee493; // granny smioth apple
+
 $white: #fff;
 $black: #000; // $grey50: #fff;
+
+$grey50: #f2f2f2;
+$grey100: #ededed;
+$grey200: #d8d8d8;
 $grey300: #cbcbcb;
 $grey400: #afafaf;
 $grey500: #909090;
@@ -32,4 +35,13 @@ $grey900: #363636;
 %float {
   display: flex;
   flex-direction: row;
+}
+
+%pseudo-block {
+  &::after,
+  &::before {
+    display: block;
+    position: absolute;
+    content: '';
+  }
 }

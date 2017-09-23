@@ -90,8 +90,10 @@ class App extends Component {
 
   /** Reset game in its entirety, including wins (non round property) */
   resetGame = () => {
-    // @TODO logic
-    return true;
+    this.setState({
+      ...this.getDefaultGameState(),
+      ...this.getDefaultBoardState()
+    });
   };
 
   /** Array of cells the current player has 'marked' */
@@ -127,12 +129,17 @@ class App extends Component {
           {this.state.message && <p>{this.state.message}</p>}
           <Grid
             {...this.state}
+            player={this.getCurrentPlayer(this.state.turn)}
             onCellClick={this.takeTurn}
             handleReset={this.resetRound}
           />
         </main>
         <footer className="zone-footer">
-          <Controls turn={this.state.turn} round={this.state.round} />
+          <Controls
+            turn={this.state.turn}
+            round={this.state.round}
+            handleResetClick={this.resetGame}
+          />
         </footer>
       </div>
     );

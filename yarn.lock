@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@material/animation@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@material/animation/-/animation-0.4.0.tgz#a218239fba30b6bf5fab1d0e103b667de1d9b023"
+
 abbrev@1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.0.tgz#d0554c2256636e2f56e7c2e5ad183f859428d81f"

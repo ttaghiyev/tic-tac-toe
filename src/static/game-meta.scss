@@ -1,6 +1,6 @@
 button {
-  outline: none;
   border: 0;
+  outline: none;
   background-color: transparent;
   appearance: none;
 }
@@ -9,21 +9,23 @@ button {
   display: flex;
   position: relative;
   flex-flow: row nowrap;
-  background-color: pink;
 }
 
 .game-info {
-  $bg-color: $grey700;
+  $bg-color: $grey300;
 
+  display: flex;
   position: relative;
-  background-color: $bg-color;
+  align-items: center;
+  justify-content: center;
   width: 140px;
   height: 48px;
+  background-color: $bg-color;
 
   .info-bg {
     position: absolute;
     bottom: 0;
-
+    z-index: 105;
     fill: $bg-color;
 
     &.info-bg-lt {
@@ -38,33 +40,21 @@ button {
 
 .game-info-counter {
   display: block;
-  width: 100%;
-  text-align: center;
-  text-transform: uppercase;
+  padding: 0 8px;
+  color: $grey700;
   line-height: $space * .75;
+  text-transform: uppercase;
 
-  .round-digits,
-  .turn-digits {
-    display: inline-block;
-  }
-
-  &.game-info-round {
-    padding-top: 6px;
-    font-size: 13px;
-  }
-
-  &.game-info-turn {
-    font-size: 16px;
-    font-weight: 500;
+  .digit {
+    padding-left: 4px;
   }
 }
 
 .control-sect {
-
   position: absolute;
   bottom: 0;
-  // left: 0;
-  // transform: translateX(-50%);
+  background-color: $grey50;
+  color: $grey50;
 
   &.control-sect-lt {
     right: 100%;
@@ -77,10 +67,27 @@ button {
   }
 
   button {
+    min-width: 90px;
     padding: 9px $pad;
-    text-transform: uppercase;
-    line-height: $space;
+    background-color: transparent;
+    color: $grey500;
     font-size: 13px;
     font-weight: 500;
+    line-height: $space;
+    text-transform: uppercase;
+  }
+}
+
+.info-btn-bg {
+  position: absolute;
+  bottom: 0;
+  fill: currentColor;
+
+  &.info-btn-bg-rt {
+    left: 100%;
+  }
+
+  &.info-btn-bg-lt {
+    right: 100%;
   }
 }

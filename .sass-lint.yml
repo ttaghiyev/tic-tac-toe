@@ -111,7 +111,7 @@ rules:
     - convention: hyphenatedlowercase
   property-sort-order:
     - 1
-    - order: concentric
+    - order: smacss
     - ignore-custom-properties: false
   property-units:
     - 1

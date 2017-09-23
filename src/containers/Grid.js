@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { TweenLite, TimelineLite } from 'gsap';
+import cn from 'classnames';
+import { TimelineLite } from 'gsap';
 
 import Cell from '../components/Cell';
 
@@ -13,7 +14,7 @@ export default class Grid extends Component {
     // did we win?
     if (this.props.winSet.length === 3) {
       return this.animateWinCells(
-        document.getElementsByClassName('cell-marked')
+        document.getElementsByClassName('cell-highlight')
       );
     }
 
@@ -25,20 +26,21 @@ export default class Grid extends Component {
   }
 
   animateDraw = () => {
-    console.log('draw');
+    // @TODO fill in logic
+    return true;
   };
 
   animateWinCells = HTMLcol => {
     const winAnim = new TimelineLite();
     const winStyles = {
-      backgroundColor: 'rgba(158, 228, 147, .3)',
-      borderColor: 'rgb(158, 228, 147)',
+      backgroundColor: 'rgba(71, 229, 188, .2)',
+      borderColor: '#73C7B1',
       clearProps: 'all'
     };
 
     Array.from(HTMLcol)
       .reduce((acc, el) => {
-        acc.to(el, 1, winStyles, 0);
+        acc.to(el, 1.8, winStyles, 0);
         return acc;
       }, winAnim)
       .eventCallback('onComplete', () => this.props.handleReset());
@@ -47,17 +49,20 @@ export default class Grid extends Component {
   };
 
   render() {
-    const { cells, winSet, onCellClick } = this.props;
+    const { cells, winSet, onCellClick, player } = this.props;
     return (
-      <ul className="grid">
+      <ul className={cn('grid', `player--${player}`)}>
         {cells.map((c, i) => (
-          <Cell
-            key={i}
-            id={i}
-            owned={c}
-            highlighted={winSet}
-            handleOnClick={onCellClick}
-          />
+          <div key={i} className="cell-zone">
+            <Cell
+              key={i}
+              id={i}
+              owner={c}
+              highlighted={winSet}
+              currentPlayer={player}
+              handleOnClick={onCellClick}
+            />
+          </div>
         ))}
       </ul>
     );
@@ -69,5 +74,6 @@ Grid.propTypes = {
   winSet: PropTypes.array.isRequired,
   onCellClick: PropTypes.func.isRequired,
   handleReset: PropTypes.func.isRequired,
-  turn: PropTypes.number.isRequired
+  turn: PropTypes.number.isRequired,
+  player: PropTypes.oneOf([0, 1])
 };

@@ -73,6 +73,7 @@ $score-rt-clr: $secondary-clr;
   text-align: center;
   line-height: 48px;
   font-size: 28px;
+  color: $grey900;
 
   .lt & {
     background-color: $score-lt-clr;
@@ -84,7 +85,7 @@ $score-rt-clr: $secondary-clr;
 }
 
 // player name cards
-$name-bg: rgba(#e2e2e2, 1);
+$name-bg: rgba($grey100, 1);
 
 .player-names {
   display: flex;
@@ -140,6 +141,8 @@ $name-bg: rgba(#e2e2e2, 1);
   line-height: 24px;
   font-size: 15px;
   font-weight: 500;
+  color: $grey800;
+  text-transform: uppercase;
 
   .lt & {
     text-align: left;
@@ -150,12 +153,12 @@ $name-bg: rgba(#e2e2e2, 1);
   }
 
   &::placeholder {
-    color: red;
+    color: $grey400;
   }
 
   &:focus {
     &::placeholder {
-      color: blue;
+      color: $grey500;
     }
   }
 }
