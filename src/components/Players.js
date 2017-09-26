@@ -16,7 +16,7 @@ const Players = ({ p1wins = 0, p2wins = 0 }) => (
         <li className="score lt">
           <Triangle
             className="score-bg"
-            width={16}
+            width={12}
             height={48}
             orient={['bottom', 'left']}
           />
@@ -25,7 +25,7 @@ const Players = ({ p1wins = 0, p2wins = 0 }) => (
         <li className="score rt">
           <Triangle
             className="score-bg"
-            width={16}
+            width={12}
             height={48}
             orient={['bottom', 'right']}
           />
@@ -38,7 +38,7 @@ const Players = ({ p1wins = 0, p2wins = 0 }) => (
       <li className="player-name lt">
         <Triangle
           className="name-bg"
-          width={16}
+          width={20}
           height={42}
           orient={['bottom', 'left']}
         />
@@ -53,7 +53,7 @@ const Players = ({ p1wins = 0, p2wins = 0 }) => (
       <li className="player-name rt">
         <Triangle
           className="name-bg"
-          width={16}
+          width={20}
           height={42}
           orient={['bottom', 'right']}
         />

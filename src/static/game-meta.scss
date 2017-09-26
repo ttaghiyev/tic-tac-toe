@@ -12,7 +12,7 @@ button {
 }
 
 .game-info {
-  $bg-color: $grey300;
+  $bg-color: #D3DDED;
 
   display: flex;
   position: relative;
@@ -21,6 +21,7 @@ button {
   width: 140px;
   height: 48px;
   background-color: $bg-color;
+  cursor: default;
 
   .info-bg {
     position: absolute;
@@ -39,9 +40,11 @@ button {
 }
 
 .game-info-counter {
+  $text-color: #515969;
+
   display: block;
   padding: 0 8px;
-  color: $grey700;
+  color: $text-color;
   line-height: $space * .75;
   text-transform: uppercase;
 
@@ -51,10 +54,20 @@ button {
 }
 
 .control-sect {
+  $bg-clr: $grey50;
+  $bg-hvr-clr: lighten($grey50, 1%);
+  $txt-clr: $grey500;
+  $txt-hvr-clr: darken($grey500, 5%);
+
   position: absolute;
   bottom: 0;
-  background-color: $grey50;
-  color: $grey50;
+  background-color: $bg-clr;
+  color: $bg-clr; // svg fill ingerits from this
+
+  &:hover {
+    background-color: $bg-hvr-clr;
+    color: $bg-hvr-clr;
+  }
 
   &.control-sect-lt {
     right: 100%;
@@ -69,12 +82,18 @@ button {
   button {
     min-width: 90px;
     padding: 9px $pad;
+    transition: color .15s ease;
     background-color: transparent;
-    color: $grey500;
+    color: $txt-clr;
     font-size: 13px;
     font-weight: 500;
     line-height: $space;
     text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      color: $txt-hvr-clr;
+    }
   }
 }
 

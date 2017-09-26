@@ -1,6 +1,8 @@
 # TODO
 - hover states for footer buttons
 - notifications for winning, resetting, forfeteing rounds and so on
+- logic for concede
+- consider writing media queries for smaller screens
 
 ### Done
 - ~~state should be: game state / player win state~~

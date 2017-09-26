@@ -156,7 +156,8 @@ $name-bg: rgba($grey100, 1);
     color: $grey400;
   }
 
-  &:focus {
+  &:focus,
+  &:hover {
     &::placeholder {
       color: $grey500;
     }

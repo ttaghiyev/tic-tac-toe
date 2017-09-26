@@ -10,7 +10,7 @@ const Controls = ({ turn, round, handleResetClick }) => (
       <button onClick={handleResetClick}>reset</button>
       <Triangle
         className="info-btn-bg info-btn-bg-lt"
-        width={16}
+        width={20}
         height={42}
         orient={['top', 'left']}
       />
@@ -19,7 +19,7 @@ const Controls = ({ turn, round, handleResetClick }) => (
       <button>concede</button>
       <Triangle
         className="info-btn-bg info-btn-bg-rt"
-        width={16}
+        width={20}
         height={42}
         orient={['top', 'right']}
       />
@@ -27,9 +27,15 @@ const Controls = ({ turn, round, handleResetClick }) => (
     <div className="game-info">
       <Triangle
         className="info-bg info-bg-lt"
-        width={16}
+        width={14}
         height={48}
         orient={['top', 'left']}
+      />
+      <Triangle
+        className="info-bg info-bg-rt"
+        width={14}
+        height={48}
+        orient={['top', 'right']}
       />
 
       <div className="game-info-counter game-info-turn">
@@ -39,13 +45,6 @@ const Controls = ({ turn, round, handleResetClick }) => (
       <div className="game-info-counter game-info-round">
         RND <Digits className="round-digits" val={round} />
       </div>
-
-      <Triangle
-        className="info-bg info-bg-rt"
-        width={16}
-        height={48}
-        orient={['top', 'right']}
-      />
     </div>
   </section>
 );

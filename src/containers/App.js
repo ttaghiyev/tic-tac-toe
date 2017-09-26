@@ -119,7 +119,6 @@ class App extends Component {
   getCurrentPlayer = turnNum => (parseInt(turnNum) % 2 == 0 ? 1 : 0);
 
   render() {
-    // @TODO cleanup
     return (
       <div className="zone-content">
         <header className="zone-header">
