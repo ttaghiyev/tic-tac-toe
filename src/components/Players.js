@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Digits from './Digits';
 import Triangle from './Triangle';
+import PlayerName from '../containers/PlayerName';
 
 /** Combined player names / scores component */
-const Players = ({ p1wins = 0, p2wins = 0 }) => (
+const Players = ({ p1wins = 0, p2wins = 0, updatePlayerName }) => (
   <section className="players">
     <div className="player-bars">
       <div className="bar lt" />
@@ -43,10 +44,10 @@ const Players = ({ p1wins = 0, p2wins = 0 }) => (
           orient={['bottom', 'left']}
         />
         <div className="name-text">
-          <input
-            className="name-text-inpt"
-            type="text"
+          <PlayerName
+            playerId="0"
             placeholder="PLAYER ONE"
+            handleInputFocusOut={updatePlayerName}
           />
         </div>
       </li>
@@ -58,10 +59,10 @@ const Players = ({ p1wins = 0, p2wins = 0 }) => (
           orient={['bottom', 'right']}
         />
         <div className="name-text">
-          <input
-            className="name-text-inpt"
-            type="text"
+          <PlayerName
+            playerId="1"
             placeholder="PLAYER TWO"
+            handleInputFocusOut={updatePlayerName}
           />
         </div>
       </li>
@@ -71,7 +72,8 @@ const Players = ({ p1wins = 0, p2wins = 0 }) => (
 
 Players.propTypes = {
   p1wins: PropTypes.number.isRequired,
-  p2wins: PropTypes.number.isRequired
+  p2wins: PropTypes.number.isRequired,
+  updatePlayerName: PropTypes.func.isRequired
 };
 
 export default Players;

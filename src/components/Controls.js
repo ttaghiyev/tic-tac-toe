@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Digits from './Digits';
 import Triangle from './Triangle';
 
-const Controls = ({ turn, round, handleResetClick }) => (
+const Controls = ({ turn, round, handleResetClick, handleConcedeClick }) => (
   <section className="controls">
     <div className="control-sect control-sect-lt">
       <button onClick={handleResetClick}>reset</button>
@@ -16,7 +16,7 @@ const Controls = ({ turn, round, handleResetClick }) => (
       />
     </div>
     <div className="control-sect control-sect-rt">
-      <button>concede</button>
+      <button onClick={handleConcedeClick}>concede</button>
       <Triangle
         className="info-btn-bg info-btn-bg-rt"
         width={20}
@@ -52,7 +52,8 @@ const Controls = ({ turn, round, handleResetClick }) => (
 Controls.propTypes = {
   turn: PropTypes.number.isRequired,
   round: PropTypes.number.isRequired,
-  handleResetClick: PropTypes.func.isRequired
+  handleResetClick: PropTypes.func.isRequired,
+  handleConcedeClick: PropTypes.func.isRequired
 };
 
 export default Controls;

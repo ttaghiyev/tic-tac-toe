@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { TimelineLite } from 'gsap';
 
-import Cell from '../components/Cell';
+import Cell from './Cell';
 
 export default class Grid extends Component {
   constructor() {
@@ -19,16 +19,13 @@ export default class Grid extends Component {
     }
 
     if (this.props.turn > 9) {
-      return this.props.handleReset();
+      this.props.handleNotify('Draw');
+      this.props.handleReset();
+      return true;
     }
 
     return true;
   }
-
-  animateDraw = () => {
-    // @TODO fill in logic
-    return true;
-  };
 
   animateWinCells = HTMLcol => {
     const winAnim = new TimelineLite();
@@ -40,10 +37,12 @@ export default class Grid extends Component {
 
     Array.from(HTMLcol)
       .reduce((acc, el) => {
-        acc.to(el, 1.8, winStyles, 0);
+        acc.to(el, 1.4, winStyles, 0);
         return acc;
       }, winAnim)
-      .eventCallback('onComplete', () => this.props.handleReset());
+      .eventCallback('onComplete', () => {
+        this.props.handleReset();
+      });
 
     winAnim.play();
   };
@@ -74,6 +73,7 @@ Grid.propTypes = {
   winSet: PropTypes.array.isRequired,
   onCellClick: PropTypes.func.isRequired,
   handleReset: PropTypes.func.isRequired,
+  handleNotify: PropTypes.func.isRequired,
   turn: PropTypes.number.isRequired,
   player: PropTypes.oneOf([0, 1])
 };
