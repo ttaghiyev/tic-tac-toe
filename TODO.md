@@ -1,10 +1,11 @@
 # TODO
-- hover states for footer buttons
-- notifications for winning, resetting, forfeteing rounds and so on
-- logic for concede
+- color the TRN section based on the active player so concede is obvious
 - consider writing media queries for smaller screens
 
 ### Done
+- ~~logic for concede~~
+- ~~notifications for winning, resetting, forfeteing rounds and so on~~
+- ~~hover states for footer buttons~~
 - ~~state should be: game state / player win state~~
 - ~~method for resetting the ROUND and resetting the whole game~~
 - ~~for each 'round' only reset the round (aka board) state~~
